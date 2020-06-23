@@ -1,0 +1,23 @@
+#!/usr/bin/python
+
+import sys 
+import math
+
+if __name__ == '__main__':
+    if len(sys.argv) != 5:
+        print("Needed 4 arguments: <dimension = o, n> <x> <y> <z>")
+
+    dimension = ""
+    x, y, z = sys.argv[2], sys.argv[3], sys.argv[4]
+    x, y, z = float(x), float(y), float(z)
+
+    if sys.argv[1] == 'o':
+        x, y, z = math.floor(x / 8), y, math.floor(z / 8)
+        dimension = "nether"
+    elif sys.argv[1] == 'n':
+        x, y, z = math.floor(x * 8), y, math.floor(z * 8)
+        dimension = "overworld"
+    else:
+        print("Dimension [o]verworld or [n]ether!")
+
+    print(f"Coordinates in {dimension} are ({x}, {y}, {z})")

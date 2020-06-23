@@ -1,0 +1,5 @@
+#!/bin/bash
+
+nohup Xvfb :10 &> .xvfb-plex-player.out &
+DISPLAY=:10 nohup plexmediaplayer &> .plex-player.out &
+

@@ -1,0 +1,45 @@
+#! /bin/sh
+
+# Start things
+i3lock-bls -u "$WALLPAPER" &
+feh --bg-fill $WALLPAPER &
+dunst &
+xss-lock -- $HOME/.bin/i3lock-bls -l dimblur &
+compton -cb 
+nm-applet &
+caffeine &
+numlockx &
+mpd &
+sxhkd &
+launch_polybar &
+flashfocus -t 200 &
+
+# Bspwm config
+bspc monitor eDP1 -d 1 2 3 4 5 6 
+bspc monitor DP1 -d 7 8 9
+
+bspc config border_width         2
+bspc config normal_border_color  "#808080"
+bspc config focused_border_color "#FF512F"
+bspc config window_gap           4
+bspc config remove_disabled_monitors  true
+bspc config remove_unplugged_monitors true 
+
+bspc config split_ratio          0.5
+bspc config borderless_monocle   true
+bspc config gapless_monocle      false
+bspc config single_monocle       true
+bspc config click_to_focus			 true
+
+# Rule examples
+bspc rule -a Zathura state=tiled
+bspc rule -a net-minecraft-launcher-Main state=floating
+bspc rule -a System-config-printer.py state=floating
+bspc rule -a tilda focus=off 
+#bspc rule -a Gimp desktop='^8' state=floating follow=on
+#bspc rule -a Chromium desktop='^2'
+#bspc rule -a mplayer2 state=floating
+#bspc rule -a Kupfer.py focus=on
+#bspc rule -a Screenkey manage=off
+
+java_non_reparenting_wm_hack &

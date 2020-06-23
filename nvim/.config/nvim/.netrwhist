@@ -1,0 +1,11 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =9
+let g:netrw_dirhist_9='/home/kevin/Code/recommendation-system/controller/src'
+let g:netrw_dirhist_8='/etc/genuki'
+let g:netrw_dirhist_7='/home/kevin/.local/share/albert'
+let g:netrw_dirhist_6='/home/kevin/Projects/Themes/papirus-icon-theme'
+let g:netrw_dirhist_5='/usr/lib/dracut/modules.d/50gensplash'
+let g:netrw_dirhist_4='/usr/lib/dracut/modules.d/00bash'
+let g:netrw_dirhist_3='/home/kevin/Projects/CMF/api/env'
+let g:netrw_dirhist_2='/home/kevin/Projects/Rust/meteoro/meteoro-system-mock/src'
+let g:netrw_dirhist_1='/home/kevin/Coding/Rust/wasm-game-of-life/tests'

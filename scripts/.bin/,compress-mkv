@@ -1,0 +1,15 @@
+#!/bin/bash
+
+set -o xtrace
+
+output="${1%.*}"
+mkdir -p "$(pwd)/compressed"
+ffmpeg -i "$1"        \
+    -codec:v libx265  \
+    -codec:a copy     \
+    -codec:s copy     \
+    -crf "$2"         \
+    -map 0:0          \
+    -map 0:3          \
+    -map 0:5          \
+    "compressed/${output}.mkv"

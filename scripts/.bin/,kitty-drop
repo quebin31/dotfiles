@@ -1,0 +1,1 @@
+tdrop -ma -f '--config ~/.config/kitty/dropdown.conf' kitty

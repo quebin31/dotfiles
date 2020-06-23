@@ -1,0 +1,5 @@
+#!/bin/bash
+
+gamemoded -r &
+__GL_SHADER_DISK_CACHE=1 __GL_THREADED_OPTIMIZATIONS=1 vblank_mode=0 WINEESYNC=1 /usr/bin/cemu
+killall gamemoded
