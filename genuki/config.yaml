@@ -1,0 +1,43 @@
+linux:
+  splash-image: /usr/share/systemd/bootctl/splash-arch.bmp
+
+  flavors:
+    default:
+      cmdline: cmdline
+      output: /boot/EFI/Linux/archlinux.efi
+
+    fallback:
+      enabled: false
+      title: "Arch Linux (fallback)"
+      cmdline: cmdline
+      output: /boot/EFI/Linux/archlinux-fallback.efi
+
+    nvidia:
+      enabled: false
+      title: "Arch Linux Gaming"
+      cmdline: nvidia
+      output: /boot/EFI/Linux/archlinux-nvidia.efi
+
+linux-ck-haswell:
+  splash-image: /usr/share/systemd/bootctl/splash-arch.bmp
+
+  flavors:
+    default:
+      title: "Arch Linux CK"
+      cmdline: cmdline
+      output: /boot/EFI/Linux/archlinux-ck.efi
+
+    nvidia:
+      title: "Arch Linux Gaming"
+      cmdline: nvidia
+      output: /boot/EFI/Linux/archlinux-ck-nvidia.efi
+
+
+linux-lts:
+  splash-image: /usr/share/systemd/bootctl/splash-arch.bmp
+
+  flavors:
+    default:
+      title: "Arch Linux LTS"
+      cmdline: cmdline
+      output: /boot/EFI/Linux/archlinux-lts.efi
