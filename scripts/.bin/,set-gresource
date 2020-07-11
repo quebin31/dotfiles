@@ -9,9 +9,10 @@ else
 fi
 
 if [[ -f 'gnome-shell-theme.gresource.xml' ]]; then 
-    echo "Generating gresources..."
+    echo "Compiling gnome-shell-theme.gresource.xml..."
     sudo glib-compile-resources --target=/usr/share/gnome-shell/gnome-shell-theme.gresource gnome-shell-theme.gresource.xml
+    echo "Done!"
 else 
-    echo "gnome-shell-theme.gresource.xml doesn't exist!"
+    echo "Error: gnome-shell-theme.gresource.xml doesn't exist!"
     exit 1
 fi
