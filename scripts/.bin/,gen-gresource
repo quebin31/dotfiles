@@ -1,0 +1,28 @@
+#!/bin/bash
+
+GTK_THEME=$1
+GRES="gnome-shell-theme.gresource.xml"
+
+echo "Generating gnome-shell-theme.gresource.xml"
+
+if [[ -d "$HOME/.themes/${GTK_THEME}/gnome-shell" ]]; then 
+    cd "$HOME/.themes/${GTK_THEME}/gnome-shell"
+else 
+    cd "/usr/share/themes/${GTK_THEME}/gnome-shell"
+fi
+
+echo "<?xml version="1.0" encoding="UTF-8"?>" > "$GRES"
+echo "<gresources>" >> "$GRES"
+echo "  <gresource prefix=\"/org/gnome/shell/theme\">" >> "$GRES"
+
+shopt -s globstar
+for file in **/*; do
+    [[ -d "$file" ]] && continue
+    [[ "$file" = "gnome-shell-theme.gresource.xml" ]] && continue
+    [[ "$file" =~ ".*\.md$" ]] && continue
+
+    echo "    <file>${file}</file>" >> "$GRES"
+done 
+
+echo "  </gresource>" >> "$GRES"
+echo "</gresources>" >> "$GRES"
