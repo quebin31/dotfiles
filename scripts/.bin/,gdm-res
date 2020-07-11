@@ -1,0 +1,16 @@
+#!/bin/bash
+
+GTK_THEME=$1
+
+if [[ -d "$HOME/.themes/${GTK_THEME}/gnome-shell" ]]; then 
+    cd "$HOME/.themes/${GTK_THEME}/gnome-shell"
+else 
+    cd "/usr/share/themes/${GTK_THEME}/gnome-shell"
+fi
+
+if [[ -f 'gnome-shell-theme.gresource.xml' ]]; then 
+    sudo glib-compile-resources --target=/usr/share/gnome-shell/gnome-shell-theme.gresource gnome-shell-theme.gresource.xml
+else 
+    echo "gnome-shell-theme.gresource.xml doesn't exist!"
+    exit 1
+fi
