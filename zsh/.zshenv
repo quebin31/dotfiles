@@ -1,0 +1,8 @@
+export PATH="$PATH:$HOME/.bin"
+export PATH="$PATH:$HOME/.local/bin"
+export PATH="$PATH:$HOME/.yarn/bin"
+export PATH="$PATH:$HOME/.config/yarn/global/node_modules/.bin"
+export PATH="$PATH:$HOME/.pub-cache/bin"
+export PATH="$PATH:$HOME/Android/flutter/bin"
+export PATH="$PATH:$HOME/Android/sdk/platform-tools"
+export PATH="$PATH:$HOME/.cargo/bin"

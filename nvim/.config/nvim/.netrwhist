@@ -1,5 +1,6 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =4
+let g:netrw_dirhistcnt =5
+let g:netrw_dirhist_5='/home/kevin/Code/hadoop/web-searcher/.git'
 let g:netrw_dirhist_4='/home/kevin/Code/recommendation-system/controllers/books/migrations/2020-05-25-160123_create_ratings'
 let g:netrw_dirhist_3='/home/kevin/Code/recommendation-system/controllers/movie-lens-small/triggers/2020-06-26-194032_update_means_on_upd'
 let g:netrw_dirhist_2='/home/kevin/Downloads/Overture/configuration/org.eclipse.e4.ui.css.swt.theme'
@@ -9,4 +10,3 @@ let g:netrw_dirhist_9='/home/kevin/Code/recommendation-system/controllers/movie-
 let g:netrw_dirhist_8='/home/kevin/Code/recommendation-system/controllers/movie-lens-small/migrations'
 let g:netrw_dirhist_7='/home/kevin/Code/recommendation-system/controllers/movie-lens-small/src/models'
 let g:netrw_dirhist_6='/home/kevin/Code/recommendation-system/controllers/movie-lens-small/src'
-let g:netrw_dirhist_5='/home/kevin/Code/recommendation-system/controllers/movie-lens-small'
