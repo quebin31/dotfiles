@@ -1,1 +1,1 @@
-rw root=/dev/mapper/Grupo0-lvolroot quiet loglevel=3 apparmor=1 nowatchdog systemd.show_status rd.udev.log_priority=3 i915.fastboot=1 optimus-manager.startup=nvidia
+rw root=/dev/mapper/Grupo0-lvolroot quiet loglevel=3 nowatchdog systemd.show_status rd.udev.log_priority=3 i915.fastboot=1 optimus-manager.startup=nvidia

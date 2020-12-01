@@ -28,16 +28,8 @@ linux-ck-haswell:
       output: /boot/EFI/Linux/archlinux-ck.efi
 
     nvidia:
+      enabled: false
       title: "Arch Linux Gaming"
       cmdline: nvidia
       output: /boot/EFI/Linux/archlinux-ck-nvidia.efi
 
-
-linux-lts:
-  splash-image: /usr/share/systemd/bootctl/splash-arch.bmp
-
-  flavors:
-    default:
-      title: "Arch Linux LTS"
-      cmdline: cmdline
-      output: /boot/EFI/Linux/archlinux-lts.efi
