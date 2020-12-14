@@ -16,4 +16,7 @@ _SILENT_JAVA_OPTIONS="${_JAVA_OPTIONS}"
 unset _JAVA_OPTIONS
 alias java="java ${_SILENT_JAVA_OPTIONS}"
 
-eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+
+if [[ -f  /home/linuxbrew/.linuxbrew/bin/brew ]]; then 
+    eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
