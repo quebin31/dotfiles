@@ -12,24 +12,3 @@ linux:
       cmdline: cmdline
       output: /boot/EFI/Linux/archlinux-fallback.efi
 
-    nvidia:
-      enabled: false
-      title: "Arch Linux Gaming"
-      cmdline: nvidia
-      output: /boot/EFI/Linux/archlinux-nvidia.efi
-
-linux-ck-haswell:
-  splash-image: /usr/share/systemd/bootctl/splash-arch.bmp
-
-  flavors:
-    default:
-      title: "Arch Linux CK"
-      cmdline: cmdline
-      output: /boot/EFI/Linux/archlinux-ck.efi
-
-    nvidia:
-      enabled: false
-      title: "Arch Linux Gaming"
-      cmdline: nvidia
-      output: /boot/EFI/Linux/archlinux-ck-nvidia.efi
-
