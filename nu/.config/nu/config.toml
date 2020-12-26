@@ -1,6 +1,8 @@
+nonzero_exit_errors = true
 path = ["/opt/google-cloud-sdk/bin", "/usr/local/bin", "/usr/local/sbin", "/usr/bin", "/var/lib/flatpak/exports/bin", "/usr/lib/jvm/default/bin", "/usr/bin/site_perl", "/usr/bin/vendor_perl", "/usr/bin/core_perl", "/home/kevin/.bin", "/home/kevin/.local/bin", "/home/kevin/.yarn/bin", "/home/kevin/.config/yarn/global/node_modules/.bin", "/home/kevin/.pub-cache/bin", "/home/kevin/Android/flutter/bin", "/home/kevin/Android/sdk/platform-tools", "/home/kevin/.cargo/bin", "/home/kevin/.antigen/bundles/robbyrussell/oh-my-zsh/lib", "/home/kevin/.antigen/bundles/robbyrussell/oh-my-zsh/plugins/git", "/home/kevin/.antigen/bundles/zsh-users/zsh-autosuggestions", "/home/kevin/.antigen/bundles/zsh-users/zsh-completions", "/home/kevin/.antigen/bundles/zsh-users/zsh-syntax-highlighting"]
 prompt = "echo $(starship prompt)"
-startup = []
+skip_welcome_message = true
+startup = ["alias l [] { ls | sort-by type }", "alias lt [] { ls | sort-by type | select name type size }"]
 table_mode = "light"
 
 [env]
