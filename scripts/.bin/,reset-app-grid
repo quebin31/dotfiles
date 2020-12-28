@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# Fix Gnome Shell App Grid mess
+gsettings reset org.gnome.shell app-picker-layout
