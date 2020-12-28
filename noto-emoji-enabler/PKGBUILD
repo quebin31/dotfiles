@@ -1,0 +1,22 @@
+# Maintainer: Kevin Del Castillo R. <quebin31@gmail.com>
+
+pkgname=noto-color-emoji-enabler
+pkgver=1.0.0
+pkgrel=1
+pkgdesc="Enable Noto Color Emojis, everywhere!"
+arch=('any')
+license=('GPL')
+depends=('noto-fonts-emoji')
+optdepends=()
+conflicts=()
+options=()
+source=("75-noto-color-emoji.conf")
+sha256sums=(5755f9a5156e6279eaf846a39e2d2ad5241441467457011a5fe4e40bff217d85)
+
+package() {
+    mkdir -p "$pkgdir/etc/fonts/conf.avail"
+    mkdir -p "$pkgdir/etc/fonts/conf.d"
+
+    cp "75-noto-color-emoji.conf" "$pkgdir/etc/fonts/conf.avail"
+    ln -s "/etc/fonts/conf.avail/75-noto-color-emoji.conf" "$pkgdir/etc/fonts/conf.d/"
+}
