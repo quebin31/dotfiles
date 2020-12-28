@@ -7,6 +7,6 @@ libraries = [ 'default' ]
 # Specified format that will be used for this library
 format = '{artist}/{album}/{track} - {title}.{ext}'
 # Folders that compose this library
-folders = ['$HOME/Music', '/run/media/kevin/SD Card/Music' ]
+folders = ['$HOME/Music', '$HOME/Music/External' ]
 # If enabled, the rename will be compatible with exFAT 
 exfat-compat = true
