@@ -3,15 +3,16 @@
 file=$(basename "$1")
 name="${file%.*}"
 
+shift
+
 subs=$(ffprobe \
     -loglevel error -select_streams s \
     -show_entries stream=index:stream_tags=language \
     -of csv=p=0 "${file}")
 
-
 for sub in $(echo "$subs" | tr '\n' ' '); do
     tnum=$(echo "${sub}" | cut -d, -f1)
     lang=$(echo "${sub}" | cut -d, -f2)
     
-    ffmpeg -i "$file" -map "0:${tnum}" "${name}.${lang}.srt"
+    ffmpeg -i "$file" -map "0:${tnum}" "$@" "${name}.${lang}.srt"
 done
