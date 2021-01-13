@@ -55,32 +55,12 @@ alias c++17='g++ -std=gnu++17'
 alias c++20='g++ -std=gnu++2a -fconcepts'
 alias ratemirrors='sudo reflector --verbose --latest=10 --age=24 --sort=rate --save=/etc/pacman.d/mirrorlist'
 alias rswasm='wasm-pack'
-alias pacman='yay'
 alias please='sudo'
-alias start='systemctl start'
-alias enable='systemctl enable'
-alias stop='systemctl stop'
-alias status='systemctl status'
-alias restart='systemctl restart'
 # ==================================================================
 
 # ==================================================================
 # Functions
 # ==================================================================
-bset() {
-    xbacklight -set $1
-    echo "Brightness: $1%"
-}
-
-bget() {
-	brightness=$(xbacklight -get | awk '{printf "%.0f", $1}')
-    echo "Brightness: $brightness%"
-}
-
-tmpl() {
-    cp -r "$HOME/Templates/$1" "$2"
-}
-
 set-java() {
     sudo archlinux-java set "java-${1}-openjdk"   
 }
