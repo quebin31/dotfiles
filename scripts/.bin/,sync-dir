@@ -1,0 +1,12 @@
+#!/bin/bash
+
+dir=$(realpath "$1")
+dest="$2"
+
+if [[ -f "$dir/.gitignore" ]]; then 
+    exclude="--exclude-from=$dir/.gitignore"
+else 
+    exclude=""
+fi
+
+rsync -rpt "$exclude" --delete-before "$dir" "$dest"

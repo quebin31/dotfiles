@@ -1,0 +1,4 @@
+#!/bin/bash
+
+barriers -a 0.0.0.0:24800 -c ~/.config/barrier/barrier.conf -f --no-tray
+
