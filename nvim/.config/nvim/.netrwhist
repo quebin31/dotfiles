@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =0
+let g:netrw_dirhistcnt =2
+let g:netrw_dirhist_2='/home/kevin/.local/share/Steam/legacycompat'
+let g:netrw_dirhist_1='/home/kevin/Temp/people'
 let g:netrw_dirhist_0='/home/kevin/Code/iotacoin/src'
 let g:netrw_dirhist_9='/etc/fonts/conf.d'
 let g:netrw_dirhist_8='/etc/fonts/conf.avail'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_6='/home/kevin/.config/kitty'
 let g:netrw_dirhist_5='/home/kevin/Code/hadoop/web-searcher/.git'
 let g:netrw_dirhist_4='/home/kevin/Code/recommendation-system/controllers/books/migrations/2020-05-25-160123_create_ratings'
 let g:netrw_dirhist_3='/home/kevin/Code/recommendation-system/controllers/movie-lens-small/triggers/2020-06-26-194032_update_means_on_upd'
-let g:netrw_dirhist_2='/home/kevin/Downloads/Overture/configuration/org.eclipse.e4.ui.css.swt.theme'
-let g:netrw_dirhist_1='/home/kevin/Code/recommendation-system/controllers/movie-lens-small/migrations/2020-06-15-000503_create_means'
