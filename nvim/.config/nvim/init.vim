@@ -7,7 +7,7 @@
 " ====================================================================
 " Get defaults that most users want.
 " ====================================================================
-source /usr/share/vim/vim82/defaults.vim 
+source /usr/share/vim/vim90/defaults.vim 
 
 " ====================================================================
 "  Change mapleader
