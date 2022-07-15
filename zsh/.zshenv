@@ -9,3 +9,5 @@ export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.fig/bin"
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk11/Contents/Home"
+export VISUAL="nvim"
+export EDITOR="nvim"
