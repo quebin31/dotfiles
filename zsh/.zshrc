@@ -1,7 +1,9 @@
+# Fig pre block. Keep at the top of this file.
+[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && . "$HOME/.fig/shell/zshrc.pre.zsh"
 # ==================================================================
 # source antigen
 # ==================================================================
-source /usr/share/zsh/share/antigen.zsh
+source ~/.antigen/antigen.zsh
 
 # ==================================================================
 # Antigen
@@ -71,3 +73,6 @@ get-java() {
 # ==================================================================
 
 eval "$(starship init zsh)"
+
+# Fig post block. Keep at the bottom of this file.
+[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && . "$HOME/.fig/shell/zshrc.post.zsh"
