@@ -1,30 +1,25 @@
 # ==================================================================
-# Source zplug
+# Source antigen
 # ==================================================================
-if [[ ! -d ~/.zplug ]]; then
-    git clone https://github.com/zplug/zplug ~/.zplug
+if [[ ! -d ~/.antigen ]]; then
+    echo "Downloading antigen.zsh ..."
+    mkdir ~/.antigen
+    curl -sL git.io/antigen > ~/.antigen/antigen.zsh
 fi
 
-source ~/.zplug/init.zsh
+source ~/.antigen/antigen.zsh
 
 # ==================================================================
-# Zplug
+# Antigen 
 # ==================================================================
-zplug "ohmyzsh/ohmyzsh", use:"lib/*.zsh"
-zplug "plugins/git", from:oh-my-zsh
-zplug "zsh-users/zsh-completions"
-zplug "zsh-users/zsh-autosuggestions"
-zplug "zsh-users/zsh-syntax-highlighting", defer:2
+antigen use oh-my-zsh
 
-# Install plugins if there are plugins that have not been installed
-if ! zplug check --verbose; then
-    printf "Install? [y/N]: "
-    if read -q; then
-        echo; zplug install
-    fi
-fi
+antigen bundle git
+antigen bundle zsh-users/zsh-completions
+antigen bundle zsh-users/zsh-autosuggestions
+antigen bundle zsh-users/zsh-syntax-highlighting
 
-zplug load 
+antigen apply
 # ==================================================================
 
 # ==================================================================
