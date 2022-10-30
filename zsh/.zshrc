@@ -65,6 +65,7 @@ alias c++20='g++ -std=gnu++2a -fconcepts'
 alias ratemirrors='sudo reflector --verbose --latest=10 --age=24 --sort=rate --save=/etc/pacman.d/mirrorlist'
 alias rswasm='wasm-pack'
 alias please='sudo'
+alias box='distrobox'
 # ==================================================================
 
 # ==================================================================
