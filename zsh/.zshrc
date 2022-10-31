@@ -61,6 +61,7 @@ alias ratemirrors='sudo reflector --verbose --latest=10 --age=24 --sort=rate --s
 alias rswasm='wasm-pack'
 alias please='sudo'
 alias box='distrobox'
+alias archbox='distrobox enter arch'
 # ==================================================================
 
 # ==================================================================
