@@ -1,0 +1,18 @@
+repo id                                           repo name
+code                                              Visual Studio Code
+copr:copr.fedorainfracloud.org:dawid:better_fonts Copr repo for better_fonts owned by dawid
+copr:copr.fedorainfracloud.org:kwizart:fedy       Copr repo for fedy owned by kwizart
+copr:copr.fedorainfracloud.org:nickavem:adw-gtk3  Copr repo for adw-gtk3 owned by nickavem
+fedora                                            Fedora 36 - x86_64
+fedora-cisco-openh264                             Fedora 36 openh264 (From Cisco) - x86_64
+fedora-modular                                    Fedora Modular 36 - x86_64
+google-chrome                                     google-chrome
+phracek-PyCharm                                   Copr repo for PyCharm owned by phracek
+rpmfusion-free                                    RPM Fusion for Fedora 36 - Free
+rpmfusion-free-updates                            RPM Fusion for Fedora 36 - Free - Updates
+rpmfusion-nonfree                                 RPM Fusion for Fedora 36 - Nonfree
+rpmfusion-nonfree-nvidia-driver                   RPM Fusion for Fedora 36 - Nonfree - NVIDIA Driver
+rpmfusion-nonfree-steam                           RPM Fusion for Fedora 36 - Nonfree - Steam
+rpmfusion-nonfree-updates                         RPM Fusion for Fedora 36 - Nonfree - Updates
+updates                                           Fedora 36 - x86_64 - Updates
+updates-modular                                   Fedora Modular 36 - x86_64 - Updates
