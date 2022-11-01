@@ -1,5 +1,5 @@
-export QT_QPA_PLATFORMTHEME=gtk2
-export QT_STYLE_OVERRIDE=kvantum
+export QT_QPA_PLATFORMTHEME='gnome'
+export QT_STYLE_OVERRIDE='adwaita'
 export SUDO_PROMPT='Password 🔐: '
 export VISUAL='nvim'
 export EDITOR='nvim'
