@@ -1,3 +1,0 @@
-#!/bin/bash
-
-firefox netflix.com  & xdotool search --sync --onlyvisible --class "Firefox" windowactivate key F11
