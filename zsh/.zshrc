@@ -76,6 +76,7 @@ get-java() {
     archlinux-java get
 }
 # ==================================================================
+source /opt/local/share/nvm/init-nvm.sh
 
 eval "$(starship init zsh)"
 
