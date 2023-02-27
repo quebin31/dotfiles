@@ -1,6 +1,0 @@
-#!/bin/bash
-
-file=$(basename "$1")
-name=${file%.*}
-
-ffmpeg -i "${file}" -map 0 -map -0:s -c copy "${name}.mp4"

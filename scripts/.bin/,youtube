@@ -1,3 +1,0 @@
-#!/bin/bash
-
-firefox youtube.com  & xdotool search --sync --onlyvisible --class "Firefox" windowactivate key F11
