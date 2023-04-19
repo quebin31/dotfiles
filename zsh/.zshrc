@@ -53,7 +53,43 @@ alias archbox='distrobox enter arch'
 # ==================================================================
 source /opt/local/share/nvm/init-nvm.sh
 
-eval "$(starship init zsh)"
+if command -v starship >/dev/null; then
+  eval "$(starship init zsh)"
+else
+  echo -n "Starship not found, do you want to install it? (y/n) "
+  read -r answer
+
+  case "$answer" in
+    [yY])
+      if [[ "$(uname -s)" == "Linux" ]]; then
+        if grep -q -i "arch linux" /etc/os-release; then
+          sudo pacman -S --noconfirm --quiet starship
+        elif grep -q -i "fedora" /etc/os-release; then
+          if ! dnf copr list enabled | grep -q "atim/starship"; then
+            sudo dnf copr enable -y --quiet atim/starship
+          fi
+          sudo dnf install -y --quiet starship
+        else
+          echo "Unsupported Linux distribution, please install starship manually"
+        fi
+      elif [[ "$(uname -s)" == "Darwin" ]]; then
+        if command -v port >/dev/null; then
+          sudo port install -Nq starship
+        else
+          echo "MacPorts not found, please install it first"
+        fi
+      else
+        echo "Unsupported operating system, please install starship manually"
+      fi
+
+      eval "$(starship init zsh)"
+      ;;
+    *)
+      echo "Starship not installed, please install it manually or re-run this script and select 'y'"
+      ;;
+  esac
+fi
+
 
 # Fig post block. Keep at the bottom of this file.
 [[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
