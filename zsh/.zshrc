@@ -66,4 +66,8 @@ arch-get-java() {
 }
 # ==================================================================
 
-eval "$(starship init zsh)"
+if command -v starship >/dev/null; then
+  eval "$(starship init zsh)"
+else
+  echo "Starship not found, are you okay?"
+fi
