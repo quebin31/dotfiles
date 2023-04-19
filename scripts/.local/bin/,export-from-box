@@ -1,0 +1,20 @@
+#!/bin/bash
+
+readonly box_name=$1
+readonly bin_or_empty=$2
+readonly bin="${bin_or_empty:-$1}"
+
+function run_box_cmd() {
+    if [[ -z $bin_or_empty ]]; then
+        # Inside box
+        eval "$1"
+    else
+        # Outside box
+        distrobox enter $box_name -- "$1"
+    fi
+}
+
+readonly bin_path=$(run_box_cmd "which $bin" | tail -1 | tr -d '[:cntrl:]' | tr -d '\n')
+
+run_box_cmd "distrobox-export --bin $bin_path --export-path ~/.local/bin"
+
