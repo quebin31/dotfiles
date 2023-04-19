@@ -1,12 +1,30 @@
 #!/bin/bash
 
-dir=$(realpath "$1")
-dest="$2"
+set -e # exit immediately if any command fails
 
-if [[ -f "$dir/.gitignore" ]]; then 
-    exclude="--exclude-from=$dir/.gitignore"
+if [[ $# -ne 2 ]]; then
+  echo "Usage: $0 <source_directory> <destination_directory>"
+  exit 1
+fi
+
+src=$(realpath "$1")
+dst="$2"
+
+if [[ ! -d "$src" ]]; then
+  echo "Error: $src is not a directory"
+  exit 1
+fi
+
+if [[ -f "$src/.gitignore" ]]; then 
+    exclude="--exclude-from=$src/.gitignore"
 else 
     exclude=""
 fi
 
-rsync -rpt "$exclude" --delete-before "$dir" "$dest"
+if ! rsync -rpt "$exclude" --delete-before "$src" "$dst"; then
+  echo "Error: rsync failed"
+  exit 1
+fi
+
+echo "Successfully synced $src to $dst"
+

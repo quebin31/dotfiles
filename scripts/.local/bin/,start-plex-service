@@ -1,3 +1,0 @@
-#!/bin/bash
-
-distrobox enter plex -- sudo systemctl start plexmediaserver.service

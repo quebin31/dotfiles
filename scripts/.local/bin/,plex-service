@@ -1,0 +1,20 @@
+#!/bin/bash
+
+function show_help_and_exit {
+  echo "Usage: $0 [start|stop|restart]"
+  exit 1
+}
+
+if [[ $# -ne 1 ]]; then
+  show_help_and_exit
+fi
+
+case "$1" in
+  start|stop|restart)
+    distrobox enter plex -- sudo systemctl "$1" plexmediaserver.service
+    ;;
+  *)
+    show_help_and_exit
+    ;;
+esac
+
