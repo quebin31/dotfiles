@@ -1,20 +1,40 @@
 #!/bin/bash
 
-readonly box_name=$1
-readonly bin_or_empty=$2
-readonly bin="${bin_or_empty:-$1}"
+# Check if the number of arguments is valid
+if [ $# -lt 1 ] || [ $# -gt 2 ]; then
+    echo "Usage: $0 <bin_name> <container_name> (from host)"
+    echo "       $0 <bin_name> (from inside container)"
+    exit 1
+fi
 
-function run_box_cmd() {
-    if [[ -z $bin_or_empty ]]; then
-        # Inside box
-        eval "$1"
+# Function to export the binary from the container
+export_bin() {
+    local bin_name="$1"
+    local container_name="$2"
+
+    if [ -z "$container_name" ]; then
+        local bin_path=$(which "$bin_name")
+        # Call distrobox-export directly inside the container
+        distrobox-export --bin "$bin_path" --export-path ~/.local/bin
     else
-        # Outside box
-        distrobox enter $box_name -- "$1"
+        local bin_path=$(distrobox enter "$container_name" -- which "$bin_name" | tail -1 | tr -d '[:cntrl:]')
+        # Run distrobox-export inside the container using distrobox enter
+        distrobox enter "$container_name" -- distrobox-export --bin "$bin_path" --export-path ~/.local/bin
     fi
 }
 
-readonly bin_path=$(run_box_cmd "which $bin" | tail -1 | tr -d '[:cntrl:]' | tr -d '\n')
+bin_name="$1"
+container_name="$2"
 
-run_box_cmd "distrobox-export --bin $bin_path --export-path ~/.local/bin"
-
+# Check if we're running inside a container (Podman or Docker)
+if [ -n "$container" ] || [ -n "$DOCKER_CONTAINER_ID" ]; then
+    # If we're inside the container, assume the container name is not needed
+    export_bin "$bin_name"
+else
+    # If we're on the host, check if the container name is provided
+    if [ -z "$container_name" ]; then
+        echo "Error: Container name is required when running from the host."
+        exit 1
+    fi
+    export_bin "$bin_name" "$container_name"
+fi
