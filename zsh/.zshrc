@@ -50,6 +50,7 @@ alias rswasm='wasm-pack'
 alias please='sudo'
 alias box='distrobox'
 alias archbox='distrobox enter arch'
+alias sgpt='box enter arch -- sgpt'
 # ==================================================================
 source /opt/local/share/nvm/init-nvm.sh
 
