@@ -1,5 +1,3 @@
-# Fig pre block. Keep at the top of this file.
-[[ -f "$HOME/.fig/shell/zshrc.pre.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.pre.zsh"
 # ==================================================================
 # Source antigen
 # ==================================================================
@@ -50,6 +48,7 @@ alias rswasm='wasm-pack'
 alias please='sudo'
 alias box='distrobox'
 alias archbox='distrobox enter arch'
+alias dotnet64='/usr/local/share/dotnet/x64/dotnet'
 # ==================================================================
 source /opt/local/share/nvm/init-nvm.sh
 
@@ -90,6 +89,4 @@ else
   esac
 fi
 
-
-# Fig post block. Keep at the bottom of this file.
-[[ -f "$HOME/.fig/shell/zshrc.post.zsh" ]] && builtin source "$HOME/.fig/shell/zshrc.post.zsh"
+eval "$(rbenv init - zsh)"

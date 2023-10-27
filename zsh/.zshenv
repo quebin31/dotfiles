@@ -7,6 +7,8 @@ export PATH="$PATH:$HOME/Android/flutter/bin"
 export PATH="$PATH:$HOME/Android/sdk/platform-tools"
 export PATH="$PATH:$HOME/.cargo/bin"
 export PATH="$PATH:$HOME/.fig/bin"
+export PATH="$PATH:$HOME/.dotnet/tools"
+export PATH="$PATH:/usr/local/share/dotnet/x64"
 
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk11/Contents/Home"
 export VISUAL="nvim"
