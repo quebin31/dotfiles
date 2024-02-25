@@ -1,0 +1,16 @@
+#!/bin/bash
+
+readonly VIDEO2X_TAG='5.0.0-beta6'
+
+docker run \
+    --gpus all \
+    -it --rm \
+    -v "$(pwd):/host" \
+    ghcr.io/k4yt3x/video2x:$VIDEO2X_TAG \
+    -i "$1" \
+    -o "$2" \
+    -p4 \
+    upscale \
+    -h 1080 \
+    -a "$3" \
+    -n3
