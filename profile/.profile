@@ -21,3 +21,5 @@ alias java="java ${_SILENT_JAVA_OPTIONS}"
 if [[ -f  /home/linuxbrew/.linuxbrew/bin/brew ]]; then 
     eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
+
+source "/home/kevin/.deno/env"

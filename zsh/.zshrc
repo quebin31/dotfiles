@@ -1,3 +1,5 @@
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":/home/kevin/.zsh/completions:"* ]]; then export FPATH="/home/kevin/.zsh/completions:$FPATH"; fi
 # ==================================================================
 # Source antigen
 # ==================================================================
@@ -125,3 +127,4 @@ eval "$(pyenv virtualenv-init -)"
 compinit
 eval "$(zoxide init --cmd cd zsh)"
 
+source "/home/kevin/.deno/env"
