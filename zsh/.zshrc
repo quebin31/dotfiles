@@ -45,29 +45,14 @@ alias la='ls -a'
 alias lt='ls --tree'
 alias zshrc='nvim ~/.zshrc'
 alias vimrc='nvim ~/.config/nvim/init.vim'
-alias open='xdg-open'
-alias orphans='pacman -Qtqd'
-alias listpkgs='expac -H M '%m\t%n' | sort -h'
 alias ssh='env TERM=xterm-256color ssh'
-alias ratemirrors='sudo reflector --verbose --latest=10 --age=24 --sort=rate --save=/etc/pacman.d/mirrorlist'
 alias rswasm='wasm-pack'
 alias please='sudo'
 alias box='distrobox'
 alias archbox='distrobox enter arch'
-alias sgpt='box enter arch -- sgpt'
+alias dotnet64='/usr/local/share/dotnet/x64/dotnet'
 # ==================================================================
-
-# ==================================================================
-# Functions
-# ==================================================================
-arch-set-java() {
-    sudo archlinux-java set "java-${1}-openjdk"   
-}
-
-arch-get-java() {
-    archlinux-java get
-}
-# ==================================================================
+source /opt/local/share/nvm/init-nvm.sh
 
 if command -v starship >/dev/null; then
   eval "$(starship init zsh)"
@@ -106,7 +91,6 @@ else
   esac
 fi
 
-
 export NVM_DIR="$HOME/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
@@ -124,7 +108,8 @@ export PYENV_ROOT="$HOME/.pyenv"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
-compinit
 eval "$(zoxide init --cmd cd zsh)"
+
+eval "$(rbenv init - zsh)"
 
 source "/home/kevin/.deno/env"
