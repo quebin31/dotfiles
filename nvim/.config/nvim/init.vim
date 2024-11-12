@@ -1,7 +1,5 @@
 " ====================================================================
 " Author: Kevin DC
-" Email: quebin31@gmail.com
-" Email: lans9831@gmail.com
 " ====================================================================
 
 " ====================================================================
@@ -65,7 +63,7 @@ if !exists('g:vscode')
     Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 
     " Conqueror of Completion
-    " Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+    Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
 endif
 
 call plug#end()
