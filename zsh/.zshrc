@@ -94,17 +94,9 @@ else
 fi
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  
 
-export PNPM_HOME="/home/kevin/.local/share/pnpm"
-case ":$PATH:" in
-  *":$PNPM_HOME:"*) ;;
-  *) export PATH="$PNPM_HOME:$PATH" ;;
-esac
-
-export PYENV_ROOT="$HOME/.pyenv"
-[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
 if command -v pyenv >/dev/null 2>&1; then
     eval "$(pyenv init -)"
     eval "$(pyenv virtualenv-init -)"
@@ -116,5 +108,3 @@ if command -v rbenv >/dev/null 2>&1; then
     eval "$(rbenv init - zsh)"
 fi
 
-export DENO_DIR="$HOME/.deno" 
-[ -s "$DENO_DIR/env" ] && . "/home/kevin/.deno/env"

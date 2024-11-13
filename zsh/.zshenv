@@ -13,4 +13,16 @@ export PATH="$PATH:/usr/local/share/dotnet/x64"
 export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk11-temurin/Contents/Home"
 export VISUAL="nvim"
 export EDITOR="nvim"
-. "$HOME/.cargo/env"
+
+[ -s "$HOME/.cargo/env" ] && . "$HOME/.cargo/env"
+[ -s "$HOME/.deno/env" ] && . "$HOME/.deno/env"
+
+export PYENV_ROOT="$HOME/.pyenv"
+[[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
+
+export PNPM_HOME="$HOME/.local/share/pnpm"
+case ":$PATH:" in
+  *":$PNPM_HOME:"*) ;;
+  *) export PATH="$PNPM_HOME:$PATH" ;;
+esac
+
