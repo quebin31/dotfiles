@@ -25,12 +25,8 @@
                     }
                 }
             }
-        },
-        "deno": {
-            "enable": true,
         }
     },
-    "java.errors.incompleteClasspath.severity": "ignore",
     "svelte.enable-ts-plugin": false
 }
 
