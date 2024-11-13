@@ -10,7 +10,7 @@ export PATH="$PATH:$HOME/.fig/bin"
 export PATH="$PATH:$HOME/.dotnet/tools"
 export PATH="$PATH:/usr/local/share/dotnet/x64"
 
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" = "Darwin" ]; then
     export JAVA_HOME="/Library/Java/JavaVirtualMachines/openjdk11-temurin/Contents/Home"
 else 
     export JAVA_HOME="/usr/lib/jvm/java-11"
