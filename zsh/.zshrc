@@ -1,5 +1,3 @@
-# Add deno completions to search path
-if [[ ":$FPATH:" != *":/home/kevin/.zsh/completions:"* ]]; then export FPATH="/home/kevin/.zsh/completions:$FPATH"; fi
 # ==================================================================
 # Source antigen
 # ==================================================================
@@ -50,9 +48,13 @@ alias rswasm='wasm-pack'
 alias please='sudo'
 alias box='distrobox'
 alias archbox='distrobox enter arch'
-alias dotnet64='/usr/local/share/dotnet/x64/dotnet'
 # ==================================================================
-source /opt/local/share/nvm/init-nvm.sh
+
+INIT_NVM="/opt/local/share/nvm/init-nvm.sh"
+[ -s "$INIT_NVM" ] && . "$INIT_NVM"
+
+# Add deno completions to search path
+if [[ ":$FPATH:" != *":$HOME/.zsh/completions:"* ]]; then export FPATH="$HOME/.zsh/completions:$FPATH"; fi
 
 if command -v starship >/dev/null; then
   eval "$(starship init zsh)"
@@ -92,24 +94,27 @@ else
 fi
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 
-# pnpm
 export PNPM_HOME="/home/kevin/.local/share/pnpm"
 case ":$PATH:" in
   *":$PNPM_HOME:"*) ;;
   *) export PATH="$PNPM_HOME:$PATH" ;;
 esac
-# pnpm end
 
 export PYENV_ROOT="$HOME/.pyenv"
 [[ -d $PYENV_ROOT/bin ]] && export PATH="$PYENV_ROOT/bin:$PATH"
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"
+if command -v pyenv >/dev/null 2>&1; then
+    eval "$(pyenv init -)"
+    eval "$(pyenv virtualenv-init -)"
+fi
 
 eval "$(zoxide init --cmd cd zsh)"
 
-eval "$(rbenv init - zsh)"
+if command -v rbenv >/dev/null 2>&1; then
+    eval "$(rbenv init - zsh)"
+fi
 
-source "/home/kevin/.deno/env"
+export DENO_DIR="$HOME/.deno" 
+[ -s "$DENO_DIR/env" ] && . "/home/kevin/.deno/env"
