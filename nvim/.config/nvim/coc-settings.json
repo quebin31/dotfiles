@@ -1,12 +1,5 @@
 {
     "languageserver": {
-        "rustls":{
-            "enable": true,
-            "command": "rls",
-            "filetypes": ["rust"],
-            "revealOutputChannelOn": "error",
-            "trace.server": "off",
-        },
         "ccls": {
             "enable": true,
             "command": "ccls",
@@ -33,7 +26,11 @@
                 }
             }
         },
+        "deno": {
+            "enable": true,
+        }
     },
-    "java.errors.incompleteClasspath.severity": "ignore"
+    "java.errors.incompleteClasspath.severity": "ignore",
+    "svelte.enable-ts-plugin": false
 }
 

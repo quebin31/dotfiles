@@ -1,6 +1,20 @@
 " ====================================================================
 " Coc nvim settings
 " ====================================================================
+let g:coc_global_extensions = [
+\   'coc-json',
+\   'coc-css',
+\   'coc-svelte',
+\   'coc-pyls',
+\   'coc-deno',
+\   'coc-docker',
+\   'coc-sh',
+\   'coc-snippets',
+\   'coc-lightbulb',
+\   'coc-sql',
+\   'coc-toml',
+\   'coc-yaml',
+\]
 
 " Use <tab> to trigger completion
 function! s:check_back_space() abort
