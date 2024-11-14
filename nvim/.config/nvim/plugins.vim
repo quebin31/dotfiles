@@ -5,7 +5,7 @@
 " ====================================================================
 "  Heavy settings
 " ====================================================================
-source ~/.config/nvim/plugins/defx.vim
+source ~/.config/nvim/plugins/nvim-tree.lua
 source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/airline.vim
 source ~/.config/nvim/plugins/tagbar.vim

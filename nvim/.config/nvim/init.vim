@@ -7,6 +7,9 @@
 " ====================================================================
 source ~/.config/nvim/defaults.vim
 
+let g:loaded_netrw = 1
+let g:loaded_netrwPlugin = 1
+
 " ====================================================================
 "  Change mapleader
 " ====================================================================
@@ -47,7 +50,6 @@ if !exists('g:vscode')
 
     " Utility plugins
     Plug '907th/vim-auto-save'
-    Plug 'donRaphaco/neotex', { 'for': 'tex' }
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
 
     " Colorschemes
@@ -60,10 +62,13 @@ if !exists('g:vscode')
     Plug 'vim-airline/vim-airline-themes'
     Plug 'kristijanhusak/defx-icons'
     Plug 'ryanoasis/vim-devicons'
-    Plug 'Shougo/defx.nvim', { 'do': ':UpdateRemotePlugins' }
 
     " Conqueror of Completion
     Plug 'neoclide/coc.nvim', {'do': { -> coc#util#install()}}
+    
+    " File tree
+    Plug 'nvim-tree/nvim-web-devicons' 
+    Plug 'nvim-tree/nvim-tree.lua'
 endif
 
 call plug#end()
