@@ -27,6 +27,10 @@
             }
         }
     },
-    "svelte.enable-ts-plugin": false
+    "svelte.enable-ts-plugin": false,
+    "lightbulb.text": {
+        "default": "💡",
+        "quickfix": "🔎"
+    }
 }
 

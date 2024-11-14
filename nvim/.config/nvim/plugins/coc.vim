@@ -7,13 +7,16 @@ let g:coc_global_extensions = [
 \   'coc-svelte',
 \   'coc-pyls',
 \   'coc-deno',
+\   'coc-lua',
 \   'coc-docker',
 \   'coc-sh',
 \   'coc-snippets',
 \   'coc-lightbulb',
+\   'coc-symbol-line',
 \   'coc-sql',
 \   'coc-toml',
 \   'coc-yaml',
+\   'coc-vimlsp',
 \]
 
 " Use <tab> to trigger completion
