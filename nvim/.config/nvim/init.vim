@@ -37,6 +37,7 @@ if !exists('g:vscode')
     Plug 'luochen1990/rainbow'
     Plug 'airblade/vim-rooter'
     Plug 'yuttie/comfortable-motion.vim'
+    Plug 'm4xshen/autoclose.nvim'
 
     " Lenguage support
     Plug 'sheerun/vim-polyglot'
