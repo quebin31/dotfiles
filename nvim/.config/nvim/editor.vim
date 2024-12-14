@@ -49,8 +49,6 @@ set foldmethod=syntax          " Enable folding
 set foldlevelstart=99          " ... but don't close them automatically
 set signcolumn=yes             " Always show signcolumn
 set clipboard=unnamedplus      " Use system clipboard for everything
-"set linebreak                  " Break lines at word
-"set wrap                       " Wrap lines
 
 " ====================================================================
 " Keybindings

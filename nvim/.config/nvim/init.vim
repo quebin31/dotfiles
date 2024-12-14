@@ -52,6 +52,7 @@ if !exists('g:vscode')
     " Utility plugins
     Plug '907th/vim-auto-save'
     Plug 'iamcco/markdown-preview.nvim', { 'do': { -> mkdp#util#install() }}
+    Plug 'akinsho/toggleterm.nvim', {'tag' : 'v2.*'}
 
     " Colorschemes
     Plug 'hzchirs/vim-material'
