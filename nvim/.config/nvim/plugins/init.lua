@@ -1,3 +1,6 @@
+---@diagnostic disable-next-line: undefined-global
+local vim = vim
+
 require('autoclose').setup()
 require('nvim-tree').setup()
 require('toggleterm').setup {

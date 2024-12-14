@@ -90,7 +90,7 @@ vim.cmd('source ~/.config/nvim/editor.vim')
 -- Plugin options
 -- ====================================================================
 if not vim.g.vscode then
-  vim.cmd('source ~/.config/nvim/plugins.vim')
+  require('plugins')
 end
 
 -- ====================================================================
