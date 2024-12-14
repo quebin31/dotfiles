@@ -7,7 +7,7 @@ local vim = vim
 -- ====================================================================
 -- Heavy settings
 -- ====================================================================
-require('plugins.init')
+require('.plugins.init')
 vim.cmd('source ~/.config/nvim/plugins/coc.vim')
 vim.cmd('source ~/.config/nvim/plugins/airline.vim')
 vim.cmd('source ~/.config/nvim/plugins/tagbar.vim')
