@@ -4,11 +4,6 @@
 ---@diagnostic disable-next-line: undefined-global
 local vim = vim
 
--- ====================================================================
--- Get defaults that most users want.
--- ====================================================================
-vim.cmd('source ~/.config/nvim/defaults.vim')
-
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
 
