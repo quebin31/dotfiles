@@ -102,15 +102,6 @@ end
 -- Functions
 -- ====================================================================
 if not vim.g.vscode then
-  vim.cmd('source ~/.config/nvim/functions.vim')
-end
-
--- ====================================================================
--- Map functions
--- ====================================================================
-if not vim.g.vscode then
-  vim.keymap.set('n', '<F4>', ':call SpellCheck()<CR>')
-  vim.keymap.set('n', '<F5>', ':call NumberToggle()<CR>')
-  vim.keymap.set('n', '<F6>', ':call CursorLineToggle()<CR>')
+  require('functions')
 end
 
