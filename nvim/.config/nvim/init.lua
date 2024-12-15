@@ -48,7 +48,7 @@ if not vim.g.vscode then
 
     -- Utility plugins
     Plug('907th/vim-auto-save')
-    Plug('iamcco/markdown-preview.nvim', { ['do'] = function() vim.fn['mkdp#util#install']() end })
+    Plug('iamcco/markdown-preview.nvim', { ['do'] = function() vim.call('mkdp#util#install') end })
     Plug('akinsho/toggleterm.nvim', { tag = 'v2.*' })
 
     -- Colorschemes
@@ -63,7 +63,7 @@ if not vim.g.vscode then
     Plug('ryanoasis/vim-devicons')
 
     -- Conqueror of Completion
-    Plug('neoclide/coc.nvim', { ['do'] = function() vim.fn['coc#util#install']() end })
+    Plug('neoclide/coc.nvim', { ['do'] = function() vim.call('coc#util#install') end })
 
     -- File tree
     Plug('nvim-tree/nvim-web-devicons')
@@ -90,13 +90,12 @@ require('.editor')
 -- Plugin options
 -- ====================================================================
 if not vim.g.vscode then
-  require('.plugins')
+    require('.plugins')
 end
 
 -- ====================================================================
 -- Functions
 -- ====================================================================
 if not vim.g.vscode then
-  require('.functions')
+    require('.functions')
 end
-
