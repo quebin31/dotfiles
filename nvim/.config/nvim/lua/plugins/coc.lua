@@ -50,7 +50,7 @@ return {
             end
 
             -- Key mappings for completion
-            local map_opts = { noremap = true, silent = true, expr = true }
+            local map_opts = { noremap = true, silent = true, expr = true, replace_keycodes = false }
 
             vim.keymap.set('i', '<C-Space>', coc_refresh, map_opts)
 
@@ -58,7 +58,7 @@ return {
                 if coc_pum_visible() == 1 then
                     return coc_pum_next(1)
                 elseif check_back_space() then
-                    return '<Tab>'
+                    return npairs.esc('<Tab>')
                 else
                     return coc_refresh()
                 end
@@ -68,7 +68,7 @@ return {
                 if coc_pum_visible() == 1 then
                     return coc_pum_prev(1)
                 else
-                    return '<S-Tab>'
+                    return npairs.esc('<S-Tab>')
                 end
             end, map_opts)
 
