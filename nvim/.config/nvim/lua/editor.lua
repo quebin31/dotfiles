@@ -5,17 +5,6 @@
 local vim = vim
 
 -- ====================================================================
--- Colorschemes
--- ====================================================================
-vim.opt.termguicolors = true
-vim.opt.background = 'dark'
-vim.cmd('colorscheme vim-material')
-
-vim.api.nvim_set_hl(0, 'Normal', { bg = 'none', ctermbg = 'none' })
-vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none', ctermbg = 'none' })
-vim.api.nvim_set_hl(0, 'EndOfBuffer', { fg = '#1f1f1f' })
-
--- ====================================================================
 -- Options
 -- ====================================================================
 vim.g.pastetoggle = '<F12>'                      -- Toggle paste mode with F12 key

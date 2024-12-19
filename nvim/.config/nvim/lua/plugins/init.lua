@@ -24,16 +24,16 @@ return {
         'yuttie/comfortable-motion.vim',
         cond = is_nvim,
         keys = {
-            { '<C-f>', ':call comfortable_motion#flick(200)<CR>' },
-            { '<C-b>', ':call comfortable_motion#flick(-200)<CR>' },
+            { '<C-f>',             ':call comfortable_motion#flick(200)<CR>' },
+            { '<C-b>',             ':call comfortable_motion#flick(-200)<CR>' },
             { '<ScrollWheelDown>', ':call comfortable_motion#flick(50)<CR>' },
-            { '<ScrollWheelUp>', ':call comfortable_motion#flick(-50)<CR>' },
+            { '<ScrollWheelUp>',   ':call comfortable_motion#flick(-50)<CR>' },
         }
     },
     {
         'luochen1990/rainbow',
         cond = is_nvim,
-        init = function ()
+        init = function()
             vim.g.rainbow_active = 1
             vim.g.rainbow_conf = {
                 separately = {
@@ -43,13 +43,16 @@ return {
         end
     },
     {
-        'm4xshen/autoclose.nvim',
+        'windwp/nvim-autopairs',
+        event = 'InsertEnter',
         cond = is_nvim,
-        config = true,
+        opts = {
+            map_bs = true,
+            map_cr = true,
+        }
     },
 
     -- Utility plugins
-    'tpope/vim-eunuch',
     'lambdalisue/suda.vim',
     {
         '907th/vim-auto-save',
@@ -68,7 +71,21 @@ return {
     },
 
     -- Colorschemes
-    only_nvim('hzchirs/vim-material'),
+    {
+        'hzchirs/vim-material',
+        cond = is_nvim,
+        lazy = false,
+        priority = 1000,
+        config = function()
+            vim.opt.termguicolors = true
+            vim.opt.background = 'dark'
+            vim.cmd('colorscheme vim-material')
+
+            vim.api.nvim_set_hl(0, 'Normal', { bg = 'none', ctermbg = 'none' })
+            vim.api.nvim_set_hl(0, 'SignColumn', { bg = 'none', ctermbg = 'none' })
+            vim.api.nvim_set_hl(0, 'EndOfBuffer', { fg = '#1f1f1f' })
+        end
+    },
 
     -- Language support
     only_nvim('sheerun/vim-polyglot'),
@@ -95,6 +112,7 @@ return {
     },
 
     -- Neovim Tree
+    only_nvim('nvim-tree/nvim-web-devicons'),
     {
         'nvim-tree/nvim-tree.lua',
         cond = is_nvim,

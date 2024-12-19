@@ -11,7 +11,12 @@ return {
         'neoclide/coc.nvim',
         branch = 'release',
         cond = is_nvim,
+        dependencies = {
+            'windwp/nvim-autopairs',
+        },
         init = function()
+            local npairs = require('nvim-autopairs')
+
             -- Set global extensions
             vim.g.coc_global_extensions = {
                 'coc-json',
@@ -31,11 +36,12 @@ return {
                 'coc-vimlsp'
             }
 
-            local coc_pumvisible = vim.fn['coc#pum#visible']
-            local coc_pumnext = vim.fn['coc#pum#next']
-            local coc_pumprev = vim.fn['coc#pum#prev']
-            local coc_pumconfirm = vim.fn['coc#pum#confirm']
+            local coc_pum_visible = vim.fn['coc#pum#visible']
+            local coc_pum_next = vim.fn['coc#pum#next']
+            local coc_pum_prev = vim.fn['coc#pum#prev']
+            local coc_pum_confirm = vim.fn['coc#pum#confirm']
             local coc_refresh = vim.fn['coc#refresh']
+            local coc_has_item_selected = vim.fn['coc#pum#has_item_selected']
 
             -- Function to check backspace
             local function check_back_space()
@@ -49,8 +55,8 @@ return {
             vim.keymap.set('i', '<C-Space>', coc_refresh, map_opts)
 
             vim.keymap.set('i', '<Tab>', function()
-                if coc_pumvisible() == 1 then
-                    return coc_pumnext(1)
+                if coc_pum_visible() == 1 then
+                    return coc_pum_next(1)
                 elseif check_back_space() then
                     return '<Tab>'
                 else
@@ -59,18 +65,22 @@ return {
             end, map_opts)
 
             vim.keymap.set('i', '<S-Tab>', function()
-                if coc_pumvisible() == 1 then
-                    return coc_pumprev(1)
+                if coc_pum_visible() == 1 then
+                    return coc_pum_prev(1)
                 else
                     return '<S-Tab>'
                 end
             end, map_opts)
 
-            vim.keymap.set('i', '<cr>', function()
-                if coc_pumvisible() == 1 then
-                    return coc_pumconfirm()
+            vim.keymap.set('i', '<CR>', function()
+                if coc_pum_visible() == 1 then
+                    if coc_has_item_selected() == 1 then
+                        return coc_pum_confirm()
+                    else
+                        return npairs.esc('<C-e>') .. npairs.autopairs_cr()
+                    end
                 else
-                    return '<cr>'
+                    return npairs.autopairs_cr()
                 end
             end, map_opts)
 
@@ -104,13 +114,16 @@ return {
 
             -- Format and organize imports
             vim.api.nvim_create_user_command('Format', "call CocAction('format')", {})
-            vim.api.nvim_create_user_command('OR', "call CocActionAsync('runCommand', 'editor.action.organizeImport')", {})
+            vim.api.nvim_create_user_command('OR', "call CocActionAsync('runCommand', 'editor.action.organizeImport')",
+                {})
 
             local scroll_opts = { silent = true, nowait = true, expr = true }
             vim.keymap.set("n", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', scroll_opts)
             vim.keymap.set("n", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', scroll_opts)
-            vim.keymap.set("i", "<C-f>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"', scroll_opts)
-            vim.keymap.set("i", "<C-b>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"', scroll_opts)
+            vim.keymap.set("i", "<C-f>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(1)<cr>" : "<Right>"',
+                scroll_opts)
+            vim.keymap.set("i", "<C-b>", 'coc#float#has_scroll() ? "<c-r>=coc#float#scroll(0)<cr>" : "<Left>"',
+                scroll_opts)
             vim.keymap.set("v", "<C-f>", 'coc#float#has_scroll() ? coc#float#scroll(1) : "<C-f>"', scroll_opts)
             vim.keymap.set("v", "<C-b>", 'coc#float#has_scroll() ? coc#float#scroll(0) : "<C-b>"', scroll_opts)
 

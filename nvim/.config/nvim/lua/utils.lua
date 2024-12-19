@@ -11,4 +11,3 @@ function module.only_nvim(name)
 end
 
 return module
-
