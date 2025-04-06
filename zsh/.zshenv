@@ -15,7 +15,7 @@ if [[ "$(uname)" = "Darwin" ]]; then
 elif [[ "$(uname -n)" =~ devbox ]]; then
     # no-op
 else 
-    export JAVA_HOME="/usr/lib/jvm/java-11"
+    export JAVA_HOME="/usr/lib/jvm/java-17"
 fi
 
 export VISUAL="nvim"
