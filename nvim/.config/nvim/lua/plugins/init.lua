@@ -68,6 +68,9 @@ return {
         cond = is_nvim,
         version = '*',
         config = true,
+        keys = {
+            { '<leader>tt', ':ToggleTerm direction=float<cr>' }
+        }
     },
 
     -- Colorschemes
