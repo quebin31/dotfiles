@@ -1,2 +1,8 @@
 os:
   editPreset: 'nvim'
+customCommands:
+  - key: '<c-a>'
+    context: 'files'
+    command: git absorb
+    description: 'Absorb files and create fixup commits'
+    output: logWithPty
